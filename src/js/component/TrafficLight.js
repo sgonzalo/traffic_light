@@ -1,17 +1,17 @@
 import React from "react";
 
-export default class TrafficLight extends React.Component {
-    constructor() {
+class TrafficLight extends React.Component {
+	constructor() {
 		super();
 		this.state = {
 			clickLight: null
-		}; 
-}
+		};
+	}
 
-render() {
-let redselect = ""; 
+	render() {
+		let redselect = "";
 		let yellowselect = "";
-		let greenselect = ""; 
+		let greenselect = "";
 
 		switch (this.state.clickLight) {
 			case "red":
@@ -23,10 +23,10 @@ let redselect = "";
 			case "green":
 				greenselect = "selected";
 				break;
-}
+		}
 
-return (
-<div>
+		return (
+			<div>
 				<div id="TrafficTop" />
 				<div id="container">
 					<div
@@ -35,9 +35,7 @@ return (
 					/>
 					<div
 						className={"yellow light " + yellowselect}
-						onClick={() =>
-							this.setState({ clickLight: "yellow" })
-						}
+						onClick={() => this.setState({ clickLight: "yellow" })}
 					/>
 					<div
 						className={"green light " + greenselect}
@@ -48,8 +46,4 @@ return (
 		);
 	}
 }
-
-
-
-
-
+export default TrafficLight;
